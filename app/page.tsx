@@ -1,6 +1,8 @@
 "use client";
 import Box from "@mui/material/Box";
 import { Github } from 'lucide-react';
+import { Linkedin } from 'lucide-react'; 
+import { Instagram } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -28,7 +30,19 @@ export default function Home() {
           I'm passionate about creating efficient and scalable server-side
           applications.
         </p>
-     <Github />
+
+        {/* Icones */}
+       <div className="mt-6 flex justify-center space-x-6">
+         <a href="https://github.com/aleep98" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+           <Github size={28} />
+         </a>
+         <a href="https://www.linkedin.com/in/alexandre-passeberg-bb3585266/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+           <Linkedin size={28} />
+         </a>
+         <a href="https://www.instagram.com/aleep.dev/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+           <Instagram size={28} />
+         </a>
+       </div>
      </div>
 
     </Box>
