@@ -30,7 +30,7 @@ export default function Intro() {
           }}
         />
 
-        <div className="relative z-10 text-center">
+        <div className="relative z-10 text-center p-2">
           <p className="text-lg text-gray-300">
             Hello, World! My name is
             <span className="text-red-500 font-bold"> Alexandre</span>, and I'm a
@@ -47,16 +47,16 @@ export default function Intro() {
 
           <div className="mt-6 flex justify-center space-x-6">
             <a
-              href="https://github.com/aleep98"
+              href={process.env.NEXT_PUBLIC_GITHUB_PROFILE || "#"}
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors"
             >
               <Github size={28} />
             </a>
-
+          
             <a
-              href="https://www.linkedin.com/in/alexandre-passeberg-bb3585266/"
+              href={process.env.NEXT_PUBLIC_LINKEDIN_PROFILE || "#"}
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors"
@@ -65,7 +65,7 @@ export default function Intro() {
             </a>
 
             <a
-              href="https://www.instagram.com/aleep.dev/"
+              href={process.env.NEXT_PUBLIC_INSTAGRAM_PROFILE || "#"}
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors"

@@ -1,17 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Alexandre's Portfolio
 
-## Getting Started
+Welcome to my personal portfolio repository! This project is a modern, responsive web application built to showcase my skills as a **Back-end Developer**, my projects, and my professional journey.
 
-First, run the development server:
+It features a clean UI developed with **Next.js** and **TypeScript**, utilizing **Tailwind CSS** and **Material UI** for styling.
+
+## 🚀 Tech Stack
+
+This project leverages the following technologies:
+
+- **Framework:** Next.js 16 (App Router / Pages)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS v4 & Material UI
+- **Icons:** Lucide React & React Icons
+- **Deployment:** Vercel
+
+## 📂 Key Sections
+
+- **Intro:** Hero section with social media integration.
+- **About:** Professional summary focusing on backend architecture and scalability.
+- **Skills:** Visual grid of technical competencies (Node.js, React, SQL, etc.).
+- **Projects:** A showcase of developed applications with links to repositories and live demos.
+
+## 🛠️ Getting Started
+
+Follow these steps to run the project locally on your machine.
+
+### Prerequisites
+
+- Node.js (v18 or higher recommended)
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+1. **Clone the repository:**
+
+```bash
+git clone https://github.com/aleep98/seu-repositorio.git
+cd seu-repositorio
+```
+
+2. **Install dependencies:**
+
+```bash
+npm install
+# or
+yarn install
+```
+
+3. **Environment Variables:**
+
+Create a `.env.local` file in the root directory to configure your social links. This prevents hardcoding sensitive or changeable data.
+
+```env
+NEXT_PUBLIC_GITHUB_PROFILE=https://github.com/seu-usuario
+NEXT_PUBLIC_LINKEDIN_PROFILE=https://linkedin.com/in/seu-usuario
+NEXT_PUBLIC_INSTAGRAM_PROFILE=https://instagram.com/seu-usuario
+```
+
+4. **Run the development server:**
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.

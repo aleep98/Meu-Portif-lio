@@ -6,13 +6,14 @@ import CardActions from "@mui/material/CardActions";
 import Button from "@mui/material/Button";
 import Chip from "@mui/material/Chip";
 
+
 const projects = [
   {
     id: 1,
     title: "Logistic System",
     description: "A comprehensive dashboard for a logistics management system.",
     image: "/img/dashboard.png",
-    repoLink: "https://github.com/aleep98",
+    repoLink: process.env.NEXT_PUBLIC_GITHUB_PROFILE || "#",
     liveLink: "#",
     tags: ["React", "Node.js", "MUI"],
   },
@@ -21,7 +22,7 @@ const projects = [
     title: "Barber Studio",
     description: "A modern website for the Natan Passeberg Barber Studio.",
     image: "/img/barber.png",
-    repoLink: "https://github.com/aleep98",
+    repoLink: process.env.NEXT_PUBLIC_GITHUB_PROFILE || "#",
     liveLink: "https://np-barber.vercel.app",
     tags: ["Next.js", "Tailwind", "Framer"],
   },
@@ -30,7 +31,7 @@ const projects = [
     title: "Lash Design Studio Thainá Roberta",
     description: "A portfolio website for a professional Lash Designer.",
     image: "/img/studio-th.png",
-    repoLink: "https://github.com/aleep98",
+    repoLink: process.env.NEXT_PUBLIC_GITHUB_PROFILE || "#",
     liveLink: "https://studio-thaina-roberta.vercel.app",
     tags: ["Next.js", "CSS Modules", "Tailwind"],
   },
@@ -76,7 +77,7 @@ export default function Projects() {
                 }}
               />
                 <CardContent >
-                <Typography gutterBottom variant="h5" component="div">
+                <Typography gutterBottom variant="h6" component="div">
                   {project.title}
                 </Typography>
                 <Typography variant="body2" sx={{ color: "#9ca3af" }}>
