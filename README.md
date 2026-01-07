@@ -82,6 +82,15 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Configuring Environment Variables on Vercel
+
+Since `.env.local` is not committed to the repository, you must configure the environment variables in the Vercel dashboard:
+
+1. Go to your project settings on Vercel.
+2. Navigate to **Environment Variables**.
+3. Add the keys (`NEXT_PUBLIC_GITHUB_PROFILE`, etc.) and their corresponding values.
+4. Redeploy the application for the changes to take effect.
+
+Check out the Next.js deployment documentation for more details.
