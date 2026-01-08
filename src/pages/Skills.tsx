@@ -10,15 +10,12 @@ const skills = {
     'Node.js',
     'Express',
     'Prisma',
-    'JWT',
-    'REST API',
   ],
   Frontend: [
     'Next.js',
     'React',
     'Tailwind CSS',
     'MUI',
-    'Framer Motion',
   ],
   Database: [
     'PostgreSQL',
@@ -28,7 +25,6 @@ const skills = {
   Tools: [
     'Git',
     'GitHub',
-    'Docker',
     'Postman',
     'Vercel',
   ],

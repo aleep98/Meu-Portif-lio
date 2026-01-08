@@ -82,6 +82,22 @@ export default function Intro() {
             </a>
           </div>
         </div>
+        import Button from '@mui/material/Button'
+
+<Button
+  component="a"
+  href="/cv/Alexandre-CV.pdf"
+  download
+  sx={{
+    backgroundColor: '#2563EB',
+    color: '#fff',
+    textTransform: 'none',
+    '&:hover': { backgroundColor: '#1D4ED8' },
+  }}
+>
+  Download CV
+</Button>
+
       </Box>
     </section>
   );
