@@ -4,6 +4,8 @@ import { Github, Linkedin, Instagram } from "lucide-react";
 export default function Intro() {
   return (
     <section>
+
+      
       <Box
         sx={{
           position: "relative",
@@ -30,18 +32,24 @@ export default function Intro() {
           }}
         />
 
-        <div className="relative z-10 text-center p-2">
+        <div className="absolute z-10 text-center p-2">
+          <img
+            src="/img/profile.jpeg"
+            alt="Profile Picture"
+            className="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-red-500 object-cover shadow-lg"
+          />
+
           <p className="text-lg text-gray-300">
             Hello, World! My name is
             <span className="text-red-500 font-bold"> Alexandre</span>, and I'm a
           </p>
 
           <h1 className="text-3xl mt-4 font-bold">
-            Back-end Developer
+            Full Stack Developer
           </h1>
 
           <p className="text-sm mt-3 max-w-md mx-auto text-gray-400">
-            I'm passionate about creating efficient and scalable server-side
+            I'm passionate about building complete, efficient, and scalable web
             applications.
           </p>
 

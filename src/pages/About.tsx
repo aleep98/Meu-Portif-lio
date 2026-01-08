@@ -1,22 +1,52 @@
 export default function About() {
   return (
-    <section className="py-12 bg-[#0D0E11] text-white" id="about">
-      <div className="container mx-auto px-4">
-        <h3 className="text-3xl font-bold text-center mb-8 text-red-500">
-          About Me
-        </h3>
-        <div className="max-w-3xl mx-auto text-gray-300 text-sm leading-relaxed text-center">
-          <p className="mb-6">
-            I am a passionate Back-end Developer with a strong focus on building scalable and efficient server-side applications.
-            With experience in technologies like Node.js, React, and modern database solutions, I enjoy solving complex problems
-            and delivering high-quality code.
+    <section
+      id="about"
+      className="relative py-24 bg-[#0D0E11]"
+    >
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+
+        <div className="space-y-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-white">
+            About Me
+          </h2>
+
+          <p className="text-slate-300 leading-relaxed">
+            I am an early-career <strong className="text-white">Full Stack</strong> developer,
+            passionate about building complete web applications.
+            I seamlessly navigate between front-end and back-end, crafting everything from
+            interactive interfaces to efficient and scalable APIs.
           </p>
-          <p>
-            My journey in tech started with a curiosity for how things work under the hood, which led me to specialize in
-            backend architecture. I am always eager to learn new tools and methodologies to improve my craft.
+
+          <p className="text-slate-300 leading-relaxed">
+            Currently, I am focused on consolidating my knowledge in technologies like
+            Node.js, React, and Next.js, applying coding best practices and
+            architecture in real-world projects to deliver valuable solutions.
           </p>
+        </div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
+          {[
+            { name: 'Node.js', color: 'text-green-500' },
+            { name: 'Next.js', color: 'text-slate-200' },
+            { name: 'Express', color: 'text-slate-300' },
+            { name: 'Prisma', color: 'text-indigo-400' },
+            { name: 'MongoDB', color: 'text-green-600' },
+            { name: 'PostgreSQL', color: 'text-blue-400' },
+          ].map((tech) => (
+            <div
+              key={tech.name}
+              className="flex items-center justify-center
+              h-20 rounded-xl bg-white/5 border border-white/10
+              hover:border-red-500/50 transition"
+            >
+              <span className={`font-medium ${tech.color}`}>
+                {tech.name}
+              </span>
+            </div>
+          ))}
         </div>
       </div>
     </section>
-  );
+  )
 }
