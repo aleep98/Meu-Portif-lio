@@ -1,6 +1,7 @@
 import Box from "@mui/material/Box";
-import { Github, Linkedin, Instagram, Eye } from "lucide-react";
-
+import { Github, Linkedin, Instagram, Download, Eye } from "lucide-react";
+import Link
+ from "next/link";
 export default function Intro() {
   return (
     <section>
@@ -54,18 +55,14 @@ export default function Intro() {
             I'm passionate about building complete, efficient, and scalable web
             applications.
           </p>
-
-        <a 
-          href="/api/cv" 
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-6 inline-flex items-center gap-2
+          <Link
+         href="/cv/Alexandre-CV.pdf" className="mt-6 inline-flex items-center gap-2
           px-4 py-2 rounded-md bg-gray-600 hover:bg-red-700
           text-sm font-medium text-white transition"
         >
           View CV <Eye size={18} />
-        </a>
-
+        </Link>
+       
           <div className="mt-6 flex justify-center space-x-6">
             <a
               href={process.env.NEXT_PUBLIC_GITHUB_PROFILE || "#"}
