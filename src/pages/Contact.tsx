@@ -34,7 +34,6 @@ export default function Contact() {
     .finally(() => {
         setIsSubmitting(false)
     })
-    console.log(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID)
 }
 }
 

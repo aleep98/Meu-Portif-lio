@@ -10,6 +10,8 @@ const skills = {
     'Node.js',
     'Express',
     'Prisma',
+    'Java',
+    'SpringBoot',
   ],
   Frontend: [
     'Next.js',

@@ -1,7 +1,6 @@
 import Box from "@mui/material/Box";
 import { Github, Linkedin, Instagram, Download, Eye } from "lucide-react";
-import Link
- from "next/link";
+import Link from "next/link";
 export default function Intro() {
   return (
     <section>
@@ -46,14 +45,13 @@ export default function Intro() {
           </p>
 
           <h1 className="text-3xl mt-4 font-bold">
-            Full Stack Developer
+            Back-end Developer
           </h1>
           <div>
 
           </div>
           <p className="text-sm mt-3 max-w-md mx-auto text-gray-400">
-            I'm passionate about building complete, efficient, and scalable web
-            applications.
+             I like understanding how things work behind the scenes
           </p>
           <Link
          href="/cv/Alexandre-CV.pdf" className="mt-6 inline-flex items-center gap-2
