@@ -31,15 +31,18 @@ const projects = [
     liveLink: 'https://np-barber.vercel.app',
     stack: ['Next.js', 'Tailwind', 'Framer'],
   },
+  
+   
   {
     id: 3,
-    title: 'Lash Design Studio Thainá Roberta',
+    title: 'RPG Java',
     description:
-      'A portfolio website for a professional Lash Designer.',
-    image: '/img/studio-th.png',
+      'A Java RPG game with immersive visuals and gameplay mechanics.',
+    image: '/video/rpg-java-Cover.jpg',
+    video: '/video/rpg-java.mp4',
     repoLink: process.env.NEXT_PUBLIC_GITHUB_PROFILE || '#',
-    liveLink: 'https://studio-thaina-roberta.vercel.app',
-    stack: ['Next.js', 'CSS Modules', 'Tailwind'],
+    liveLink: '',
+    stack: ['Java', 'OOP', 'Game Design'],
   },
 ]
 
@@ -86,15 +89,28 @@ export default function Projects() {
                 },
               }}
             >
-              <CardMedia
-                component="img"
-                height="190"
-                image={project.image}
-                alt={project.title}
-                sx={{
-                  objectFit: 'cover',
-                }}
-              />
+              {project.video ? (
+                <CardMedia
+                  component="video"
+                  height="190"
+                  src={project.video}
+                  poster={project.image}
+                  controls
+                  sx={{
+                    objectFit: 'cover',
+                  }}
+                />
+              ) : (
+                <CardMedia
+                  component="img"
+                  height="190"
+                  image={project.image}
+                  alt={project.title}
+                  sx={{
+                    objectFit: 'cover',
+                  }}
+                />
+              )}
 
               <CardContent>
                 <Typography variant="h6" gutterBottom>

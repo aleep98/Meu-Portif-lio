@@ -54,7 +54,7 @@ export default function Intro() {
              I like understanding how things work behind the scenes
           </p>
           <Link
-         href="/cv/Alexandre-CV.pdf" className="mt-6 inline-flex items-center gap-2
+         href="/cv/CV - Luis Alexandre Passeberg.pdf" className="mt-6 inline-flex items-center gap-2
           px-4 py-2 rounded-md bg-gray-600 hover:bg-red-700
           text-sm font-medium text-white transition"
         >
