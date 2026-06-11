@@ -8,11 +8,9 @@ export default function About() {
           </h2>
 
           <p className="text-slate-300 leading-relaxed">
-            I started my journey to become a developer in 2023 and have remained
-            focused on this goal ever since. I've already developed some
-            front-end projects, but currently I'm directing my studies towards
-            <span className="text-white font-bold"> back-end development with Java</span>, where I seek to better understand
-            project structures and business rules.
+            Developer with experience in web projects and a focus on building back-end applications using Java and Node.js.
+             I am interested in developing scalable solutions, APIs, and business rule-driven systems, always seeking to improve my technical skills and learn new technologies.
+              Proactive and a quick learner, committed to code quality and with a strong interest in working and growing professionally in the software development field.
           </p>
         </div>
 
