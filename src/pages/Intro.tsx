@@ -23,7 +23,7 @@ export default function Intro() {
       />
       <div
         aria-hidden="true"
-        className="absolute right-[12%] top-[20%] h-80 w-80 rounded-full bg-red-700/10 blur-[110px]"
+        className="absolute right-[12%] top-[20%] hidden h-80 w-80 rounded-full bg-red-700/10 blur-[110px] md:block"
       />
 
       <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-14 px-6 pb-20 pt-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:pb-24">
@@ -102,7 +102,7 @@ export default function Intro() {
           />
           <div
             aria-hidden="true"
-            className="absolute inset-0 rounded-full border border-dashed border-white/10 motion-safe:animate-[spin_28s_linear_infinite]"
+            className="absolute inset-0 rounded-full border border-dashed border-white/10"
           />
 
           <div className="relative mx-auto aspect-[4/5] w-[76%] overflow-hidden rounded-[2rem] border border-white/15 bg-white/[0.04] p-2 shadow-[0_30px_90px_rgba(0,0,0,0.5)] backdrop-blur-sm sm:w-[72%]">

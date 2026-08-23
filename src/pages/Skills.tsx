@@ -1,9 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
-import Box from '@mui/material/Box'
-import Typography from '@mui/material/Typography'
-import Paper from '@mui/material/Paper'
+import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import type { IconType } from 'react-icons'
 import {
   SiExpress,
@@ -64,7 +61,6 @@ export default function Skills() {
 
   useEffect(() => {
     const section = sectionRef.current
-
     if (!section) return
 
     const observer = new IntersectionObserver(
@@ -74,157 +70,80 @@ export default function Skills() {
           observer.unobserve(section)
         }
       },
-      { threshold: 0.15 },
+      { threshold: 0.1 },
     )
 
     observer.observe(section)
-
     return () => observer.disconnect()
   }, [])
 
   return (
-    <section ref={sectionRef} id="skills" className="py-24 bg-[#0D0E11]">
-      <div className="max-w-7xl mx-auto px-6">
-
+    <section ref={sectionRef} id="skills" className="bg-[#0D0E11] py-24">
+      <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16 max-w-xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-white">
-            Skills
-          </h2>
-          <p className="text-slate-300 mt-4">
-            Technologies and tools I use daily
-            to build modern and scalable applications.
+          <h2 className="text-3xl font-bold text-white md:text-4xl">Skills</h2>
+          <p className="mt-4 text-slate-300">
+            Technologies and tools I use daily to build modern and scalable applications.
           </p>
         </div>
 
-        <Box
-          sx={{
-            display: 'grid',
-            gridTemplateColumns: {
-              xs: '1fr',
-              md: 'repeat(2, 1fr)',
-            },
-            gap: 4,
-          }}
-        >
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {Object.entries(skills).map(([category, items], categoryIndex) => (
-            <Paper
+            <div
               key={category}
-              sx={{
-                backgroundColor: 'rgba(255, 255, 255, 0.03)',
-                backdropFilter: 'blur(12px)',
-                border: '1px solid rgba(255,255,255,0.1)',
-                borderRadius: 3,
-                p: 3,
-                color: '#fff',
-                transition: 'all .3s ease',
-                '&:hover': {
-                  borderColor: 'rgba(255,255,255,0.2)',
-                },
-              }}
+              className="rounded-xl border border-white/10 bg-white/[0.03] p-6 transition-colors duration-300 hover:border-white/20"
             >
-              <Typography
-                variant="h6"
-                sx={{ mb: 2, fontWeight: 600 }}
-              >
-                {category}
-              </Typography>
+              <h3 className="mb-4 text-xl font-semibold text-white">{category}</h3>
 
-              <Box
-                sx={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(112px, 1fr))',
-                  gap: 1.5,
-                }}
-              >
-                {items.map(({ name, icon: Icon, color, featured }, itemIndex) => (
-                  <Box
-                    key={name}
-                    component="article"
-                    sx={{
-                      position: 'relative',
-                      minHeight: featured ? 126 : 116,
-                      p: 2,
-                      display: 'flex',
-                      flexDirection: 'column',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      gap: 1.25,
-                      overflow: 'hidden',
-                      borderRadius: 2.5,
-                      color: '#E5E7EB',
-                      backgroundColor: featured ? `${color}0D` : 'rgba(255,255,255,0.025)',
-                      border: `1px solid ${featured ? `${color}66` : 'rgba(255,255,255,0.09)'}`,
-                      boxShadow: featured ? `inset 0 0 22px ${color}0A` : 'none',
-                      opacity: isVisible ? 1 : 0,
-                      transform: isVisible ? 'translateY(0)' : 'translateY(22px)',
-                      transition: 'opacity .5s ease, transform .35s ease, border-color .35s ease, background-color .35s ease, box-shadow .35s ease',
-                      transitionDelay: isVisible
-                        ? `${categoryIndex * 100 + itemIndex * 65}ms`
-                        : '0ms',
-                      '&:hover': {
-                        transform: 'translateY(-6px) scale(1.02)',
-                        backgroundColor: `${color}16`,
-                        borderColor: color,
-                        boxShadow: `0 10px 30px ${color}38, inset 0 0 24px ${color}12`,
-                      },
-                      '&:hover svg': {
-                        filter: `drop-shadow(0 0 8px ${color})`,
-                        transform: 'scale(1.12)',
-                      },
-                      '@media (prefers-reduced-motion: reduce)': {
-                        opacity: 1,
-                        transform: 'none',
-                        transition: 'none',
-                      },
-                    }}
-                  >
-                    {featured && (
-                      <Box
-                        component="span"
-                        sx={{
-                          position: 'absolute',
-                          top: 8,
-                          right: 8,
-                          px: 0.75,
-                          py: 0.2,
-                          borderRadius: 10,
-                          backgroundColor: `${color}1F`,
-                          color,
-                          fontSize: '0.58rem',
-                          fontWeight: 700,
-                          letterSpacing: '0.08em',
-                          textTransform: 'uppercase',
-                        }}
-                      >
-                        Principal
-                      </Box>
-                    )}
+              <div className="grid grid-cols-[repeat(auto-fit,minmax(112px,1fr))] gap-3">
+                {items.map(({ name, icon: Icon, color, featured }, itemIndex) => {
+                  const style = {
+                    '--skill-color': color,
+                    '--skill-surface': featured ? `${color}0D` : 'rgba(255,255,255,0.025)',
+                    '--skill-border': featured ? `${color}66` : 'rgba(255,255,255,0.09)',
+                    '--skill-hover': `${color}16`,
+                    '--skill-shadow': `${color}38`,
+                    backgroundColor: 'var(--skill-surface)',
+                    borderColor: 'var(--skill-border)',
+                    opacity: isVisible ? 1 : 0,
+                    transform: isVisible ? 'translateY(0)' : 'translateY(18px)',
+                    transitionDelay: isVisible
+                      ? `${categoryIndex * 70 + itemIndex * 45}ms`
+                      : '0ms',
+                  } as CSSProperties
 
-                    <Icon
-                      aria-hidden="true"
-                      style={{
-                        color,
-                        fontSize: featured ? '2.45rem' : '2.1rem',
-                        transition: 'transform .35s ease, filter .35s ease',
-                      }}
-                    />
-                    <Typography
-                      component="span"
-                      sx={{
-                        color: '#F8FAFC',
-                        fontSize: '0.86rem',
-                        fontWeight: featured ? 700 : 500,
-                        textAlign: 'center',
-                      }}
+                  return (
+                    <article
+                      key={name}
+                      style={style}
+                      className={`skill-card relative flex flex-col items-center justify-center gap-2.5 overflow-hidden rounded-xl border p-4 text-slate-200 ${
+                        featured ? 'min-h-[126px]' : 'min-h-[116px]'
+                      }`}
                     >
-                      {name}
-                    </Typography>
-                  </Box>
-                ))}
-              </Box>
-            </Paper>
+                      {featured && (
+                        <span
+                          className="absolute right-2 top-2 rounded-full px-2 py-0.5 text-[0.58rem] font-bold uppercase tracking-wider"
+                          style={{ backgroundColor: `${color}1F`, color }}
+                        >
+                          Principal
+                        </span>
+                      )}
+
+                      <Icon
+                        aria-hidden="true"
+                        className="skill-icon"
+                        style={{ color, fontSize: featured ? '2.45rem' : '2.1rem' }}
+                      />
+                      <span className={`text-center text-sm text-slate-50 ${featured ? 'font-bold' : 'font-medium'}`}>
+                        {name}
+                      </span>
+                    </article>
+                  )
+                })}
+              </div>
+            </div>
           ))}
-        </Box>
+        </div>
       </div>
     </section>
   )

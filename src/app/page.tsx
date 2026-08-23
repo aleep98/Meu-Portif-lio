@@ -1,4 +1,3 @@
-"use client";
 import Intro from "../pages/Intro";
 import Projects from "../pages/Projects";
 import About from "../pages/About";

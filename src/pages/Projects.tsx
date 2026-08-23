@@ -72,7 +72,7 @@ export default function Projects() {
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-32 top-24 h-96 w-96 rounded-full bg-slate-700/[0.06] blur-[120px]"
+        className="pointer-events-none absolute -right-32 top-24 hidden h-96 w-96 rounded-full bg-slate-700/[0.06] blur-[120px] md:block"
       />
 
       <div className="relative mx-auto max-w-7xl px-6">
@@ -114,7 +114,7 @@ export default function Projects() {
                       src={project.video}
                       poster={project.image}
                       controls
-                      preload="metadata"
+                      preload="none"
                       aria-label={`${project.title} gameplay demonstration`}
                       className="h-full w-full object-cover transition-transform duration-700 group-hover/project:scale-[1.03]"
                     />

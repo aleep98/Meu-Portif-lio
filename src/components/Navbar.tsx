@@ -65,7 +65,7 @@ export default function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${
         isScrolled || isOpen
-          ? 'border-white/10 bg-[#090A0D]/90 shadow-[0_8px_30px_rgba(0,0,0,0.22)] backdrop-blur-xl'
+          ? 'border-white/10 bg-[#090A0D]/95 shadow-[0_8px_30px_rgba(0,0,0,0.22)] md:bg-[#090A0D]/88 md:backdrop-blur-lg'
           : 'border-transparent bg-transparent'
       }`}
     >
@@ -130,14 +130,14 @@ export default function Navbar() {
         aria-label="Close navigation menu"
         tabIndex={isOpen ? 0 : -1}
         onClick={closeMenu}
-        className={`fixed inset-0 top-[72px] -z-10 bg-black/55 backdrop-blur-sm transition-opacity duration-300 md:hidden ${
+        className={`fixed inset-0 top-[72px] -z-10 bg-black/65 transition-opacity duration-300 md:hidden ${
           isOpen ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
         }`}
       />
 
       <div
         id="mobile-navigation"
-        className={`absolute inset-x-4 top-[82px] overflow-hidden rounded-2xl border bg-[#0B0C0F]/95 shadow-2xl backdrop-blur-xl transition-all duration-300 md:hidden ${
+        className={`absolute inset-x-4 top-[82px] overflow-hidden rounded-2xl border bg-[#0B0C0F] shadow-2xl transition-[opacity,transform,border-color] duration-300 md:hidden ${
           isOpen
             ? 'visible translate-y-0 border-white/10 opacity-100'
             : 'invisible -translate-y-3 border-transparent opacity-0'

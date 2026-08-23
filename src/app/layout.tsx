@@ -1,22 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inconsolata } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const inconsolata = Inconsolata({
-  variable: "--font-inconsolata",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "My Portfolio",
@@ -30,16 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      />
-
-      
-
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${inconsolata.variable} ${inconsolata.className} antialiased`}
-      >
+      <body className="antialiased">
         <Navbar />
         {children}
       </body>

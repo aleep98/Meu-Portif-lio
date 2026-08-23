@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import emailjs from '@emailjs/browser'
 import {
   AlertCircle,
   ArrowUpRight,
@@ -55,6 +54,7 @@ export default function Contact() {
     setStatus('idle')
 
     try {
+      const { default: emailjs } = await import('@emailjs/browser')
       await emailjs.sendForm(serviceId, templateId, formRef.current, publicKey)
       setStatus('success')
       formRef.current.reset()
@@ -73,11 +73,11 @@ export default function Contact() {
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-48 -left-40 h-[32rem] w-[32rem] rounded-full bg-slate-700/[0.07] blur-[130px]"
+        className="pointer-events-none absolute -bottom-48 -left-40 hidden h-[32rem] w-[32rem] rounded-full bg-slate-700/[0.07] blur-[130px] md:block"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute right-0 top-10 h-72 w-72 rounded-full bg-white/[0.015] blur-[100px]"
+        className="pointer-events-none absolute right-0 top-10 hidden h-72 w-72 rounded-full bg-white/[0.015] blur-[100px] md:block"
       />
 
       <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-start gap-14 px-6 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
@@ -170,7 +170,7 @@ export default function Contact() {
           <form
             ref={formRef}
             onSubmit={sendEmail}
-            className="rounded-2xl border border-white/10 bg-white/[0.035] p-6 shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur-xl sm:p-8"
+            className="rounded-2xl border border-white/10 bg-[#121317] p-6 shadow-[0_24px_80px_rgba(0,0,0,0.28)] sm:p-8 lg:bg-white/[0.035] lg:backdrop-blur-lg"
           >
             <div className="mb-7 border-b border-white/10 pb-6">
               <p className="text-lg font-semibold text-white">Start a conversation</p>
