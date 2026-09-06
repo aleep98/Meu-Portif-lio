@@ -69,7 +69,7 @@ export default function Navbar() {
           : 'border-transparent bg-transparent'
       }`}
     >
-      <nav className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-6" aria-label="Main navigation">
+      <nav className="mx-auto flex h-18 max-w-7xl items-center justify-between px-6" aria-label="Main navigation">
         <Link
           href="#home"
           onClick={closeMenu}

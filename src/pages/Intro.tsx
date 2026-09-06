@@ -1,13 +1,21 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowDown, ArrowRight, Eye, Github, Linkedin } from 'lucide-react'
-import { SiNodedotjs, SiOpenjdk, SiSpringboot } from 'react-icons/si'
+import { SiNodedotjs, SiOpenjdk, SiSpringboot, SiWhatsapp } from 'react-icons/si'
 
 export default function Intro() {
+  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/\D/g, '')
+ const whatsappMessage =
+  'Olá, Alexandre! Vi seu portfólio e gostaria de conversar sobre uma oportunidade.'
+
+  const whatsappLink = whatsappNumber
+  ? `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
+  : `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`
+
   return (
     <section
       id="home"
-      className="relative flex min-h-[100svh] items-center overflow-hidden bg-[#090A0D] pt-24"
+      className="relative flex min-h-svh items-center overflow-hidden bg-[#090A0D] pt-24"
     >
       <div
         aria-hidden="true"
@@ -92,6 +100,15 @@ export default function Intro() {
             >
               <Linkedin size={19} />
             </a>
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Contact Alexandre on WhatsApp"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#25D366]/60 bg-[#25D366] text-[#071A0D] shadow-[0_8px_22px_rgba(37,211,102,0.25)] transition hover:-translate-y-1 hover:bg-[#2BE06C] hover:shadow-[0_10px_28px_rgba(37,211,102,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 focus-visible:ring-offset-[#090A0D] motion-reduce:transform-none"
+            >
+              <SiWhatsapp aria-hidden="true" size={20} />
+            </a>
           </div>
         </div>
 
@@ -105,7 +122,7 @@ export default function Intro() {
             className="absolute inset-0 rounded-full border border-dashed border-white/10"
           />
 
-          <div className="relative mx-auto aspect-[4/5] w-[76%] overflow-hidden rounded-[2rem] border border-white/15 bg-white/[0.04] p-2 shadow-[0_30px_90px_rgba(0,0,0,0.5)] backdrop-blur-sm sm:w-[72%]">
+          <div className="relative mx-auto aspect-4/5 w-[76%] overflow-hidden rounded-4xl border border-white/15 bg-white/[0.04] p-2 shadow-[0_30px_90px_rgba(0,0,0,0.5)] backdrop-blur-sm sm:w-[72%]">
             <div className="relative h-full w-full overflow-hidden rounded-[1.55rem]">
               <Image
                 src="/img/profile.jpeg"

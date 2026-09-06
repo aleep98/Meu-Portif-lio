@@ -12,6 +12,7 @@ import {
   MapPin,
   Send,
 } from 'lucide-react'
+import { SiWhatsapp } from 'react-icons/si'
 
 export default function Contact() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -19,7 +20,14 @@ export default function Contact() {
   const [isVisible, setIsVisible] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/\D/g, '')
 
+  const whatsappMessage =
+  'Olá, Alexandre! Vi seu portfólio e gostaria de conversar sobre uma oportunidade.'
+  const whatsappLink = whatsappNumber
+  ? `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
+  : `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`
+  
   useEffect(() => {
     const section = sectionRef.current
     if (!section) return
@@ -73,7 +81,7 @@ export default function Contact() {
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-48 -left-40 hidden h-[32rem] w-[32rem] rounded-full bg-slate-700/[0.07] blur-[130px] md:block"
+        className="pointer-events-none absolute -bottom-48 -left-40 hidden h-128 w-128 rounded-full bg-slate-700/[0.07] blur-[130px] md:block"
       />
       <div
         aria-hidden="true"
@@ -158,6 +166,15 @@ export default function Contact() {
               className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 text-slate-400 transition hover:-translate-y-1 hover:border-white/25 hover:bg-white/[0.06] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 motion-reduce:transform-none"
             >
               <Linkedin size={18} />
+            </a>
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Contact Alexandre on WhatsApp"
+              className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#25D366]/60 bg-[#25D366] text-[#071A0D] shadow-[0_8px_22px_rgba(37,211,102,0.22)] transition hover:-translate-y-1 hover:bg-[#2BE06C] hover:shadow-[0_10px_28px_rgba(37,211,102,0.38)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0D0E11] motion-reduce:transform-none"
+            >
+              <SiWhatsapp aria-hidden="true" size={19} />
             </a>
           </div>
         </div>
