@@ -10,11 +10,11 @@ const projects = [
     title: 'Logistic System',
     type: 'Full-stack application',
     description:
-      'A logistics dashboard created to centralize operations, visualize key data and support efficient day-to-day management.',
+      'A custom project designed to manage vehicles and shipments with statuses such as "pending," "in transit," and "delivered"; The system also includes user registration and login, as well as an administrator area..',
     image: '/img/dashboard.png',
     repoLink: process.env.NEXT_PUBLIC_GITHUB_PROFILE || '#',
-    liveLink: '',
-    stack: ['React', 'Node.js', 'MUI'],
+    liveLink: 'https://logistics-frontend-1-3r5q.onrender.com',
+    stack: ['React', 'Node.js', 'MUI', 'MongoDB', 'Express'],
     featured: true,
   },
   {
